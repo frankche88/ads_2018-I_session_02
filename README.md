@@ -19,6 +19,22 @@ x → ∞
         O(3n²+5n-7) = O(n²)
         O(n²) ⊂ O(n³)
         O(2ⁿ) ⊂ O(3ⁿ)
+        
+        
+2 Órdenes de complejidad
+2.1 Principales órdenes de complejidad
+
+    Orden 	Nombre
+    O(1) 	constante
+    O(log n) 	logarítmica
+    O(n) 	lineal
+    O(n log n) 	casi lineal
+    O(n²) 	cuadrática
+    O(n³) 	cúbica
+    O(a^n) 	exponencial
+
+2.2 Tasas de crecimiento
+![alt text](https://www.cs.us.es/~jalonso/cursos/i1m/temas/tema-28/fig/ordenes.png)
 
 # Complejidad Logaritmica
 
