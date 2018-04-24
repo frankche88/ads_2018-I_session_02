@@ -1,2 +1,6 @@
-# ads_2018-I_session_02
-Tarea Big O session 02 Ambinetes de desarrollo de software
+# Ambientes de desarrollo de software
+Tarea Big O session 02 
+# Complejidad Logaritmica
+
+# Complejidad Exponencial
+
