@@ -34,7 +34,7 @@ x → ∞
     O(a^n) 	exponencial
 
 2.2 Tasas de crecimiento
-![alt text](https://www.cs.us.es/~jalonso/cursos/i1m/temas/tema-28/fig/ordenes.png)
+![image](https://www.cs.us.es/~jalonso/cursos/i1m/temas/tema-28/fig/ordenes.png)
 
 # Complejidad Logaritmica
 
