@@ -38,6 +38,149 @@ x → ∞
 ![image](https://www.cs.us.es/~jalonso/cursos/i1m/temas/tema-28/fig/ordenes.png)
 
 # Complejidad Logaritmica
+1 Especificación de la función binarySearch
+    Precondicion:
+    La lista tiene que estar ordenada.
+    
+    calculada usando las propiedades
+    Valor a buscar
+    Lista Ordenada
+    Primera posicion 
+    ultima posicion
+    posicion media
+
+2 Definición recursiva de la función binarySearch
+
+posicion_media :: (ultima_posicion + Primera_posicion) /2
+
+      if (posicion_media < Primera_posicion)
+          return no_encontrado 
+
+      if (Lista_Ordenada[posicion_media] > Valor_a_buscar)
+          return BinarySearch(Lista_Ordenada, Valor_a_buscar, Primera_posicion, posicion_media-1)
+      else if (A[mid] < value)
+          return BinarySearch(Lista_Ordenada, Valor_a_buscar, posicion_media+1, ultima_posicion)
+      else
+          return Primera_posicion
+
+
+Estadísticas de la función binarySearch
+
+    El tiempo necesario para buscar (potencia 2 n) para n en [1024,2048,4096,8192,16384,32768] se recoge en la siguiente tabla
+
+       N	   time     position
+      1024	   595	       853
+                      
+      2048	    18	      1067
+                      
+      4096	     3	       803
+                      
+      8192	     4	      2055
+                      
+     16384	     3	     13551
+                      
+     32768	     7	     15685
+                      
+     65536	     5	     14723
+                      
+    131072	     6	     34713
+                      
+    262144	    15	    234065
+                      
+    524288	    23	    349561
+
+4 Ecuaciones de coste de la función binarySearch
+
+    Si T(n) es el tiempo necesario para encontrar un valor en una lista ordenada (de longitud n), entonces
+
+T(1) = 1
+T(n) = 1 + T(n/2)
+
+5 Demostración de que binarySearch pertenece O(log n)
+
+    Basta demostrar que para la función binarySearch, T(n) = 1 + log n (logaritmo en base 2).
+    Se demuestra por inducción.
+    Caso base:
+
+T(1) = 1 = 1 + log 1
+
+    Caso inductivo:
+
+T(n) 
+= 1 + T(n/2)           [por coste de binarySearch]
+= 1 + (1 + log(n/2))   [por hipótesis de inducción]
+= 1 + (1 + log n - 1)  [por álgebra]
+= 1 + log n            [por álgebra]
+
+
+T(n) 
+= 1 + T(n/2)
+
+= 1 + ( 1 + T(n/4))
+
 
 # Complejidad Exponencial
 
+1 Especificación de la función raiz
+
+    (raiz x n) es el n-ésimo término de la sucesión x(n) que calcula la raíz cuadrada de x por el método de Herón; es decir,
+
+x(0)   = 1
+x(n+1) = (x/x(n) + x(n))/2
+
+Por ejemplo,
+
+ghci> raiz 9 5
+3.0
+ghci> raiz 16 5
+4.0000005
+ghci> raiz 16 10
+4.0
+
+2 Definición recursiva de la función raiz
+
+raiz :: Float -> Int -> Float
+raiz x 0 = 1 
+raiz x n = (x / (raiz x (n-1)) + (raiz x (n-1))) / 2.0
+
+3 Estadísticas de la función raiz
+
+    El tiempo necesario para calcular (raiz 100 n) para n en [14..20] se recoge en la siguiente tabla
+
+    n 	segs
+    14 	0.14
+    15 	0.27
+    16 	0.53
+    17 	1.04
+    18 	2.03
+    19 	4.08
+    20 	8.10
+
+    En la tabla se observa que por cada número que aumenta n se duplica el tiempo y el espacio. Por tanto la relación entre n y el tiempo necesario para calcular (raiz 100 n) es del orden 2ⁿ
+
+4 Ecuaciones de coste de la función raiz
+
+    Si T(n) es el tiempo necesario para calcular (raiz a x n), entonces
+
+T(0)   = 1
+T(n+1) = 2*T(n)
+
+    Nota: Las ecuaciones de coste se pueden resolver con Wolfram Alpha.
+
+5 Demostración de que raiz ∈ O(2ⁿ) (es decir, es de coste exponencial)
+
+    Basta demostrar que para la función raiz, T(n) = 2ⁿ.
+    Se demuestra por inducción.
+    Caso base:
+
+T(0) = 1 = 2^0
+
+    Caso inductivo:
+        Suponemos la hipótesis de inducción: T(n) = 2ⁿ
+        Hay que demostrar que T(n+1) = 2^(n+1).
+        Demostración
+
+T(n+1) 
+= 2*T(n)   [por coste de raiz]
+= 2*2ⁿ     [por hip. de inducción]
+= 2^(n+1)  [por álgebra]
