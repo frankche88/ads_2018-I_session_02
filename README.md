@@ -121,29 +121,19 @@ T(n)
 
 # Complejidad Exponencial
 
-1 Especificación de la función raiz
+1 Especificación de la función fibonacci
 
-    (raiz x n) es el n-ésimo término de la sucesión x(n) que calcula la raíz cuadrada de x por el método de Herón; es decir,
+    Programa que muestra los N primeros números de la sucesión de Fibonacci de forma recursiva. Ejemplo de los primeros números de Fibonacci: 0,1,1,2,3,5,8,13,21,34…
 
-x(0)   = 1
-x(n+1) = (x/x(n) + x(n))/2
+2 Definición recursiva de la función fibonacci
 
-Por ejemplo,
+f(0) = 0
+f(1) = 1
 
-ghci> raiz 9 5
-3.0
-ghci> raiz 16 5
-4.0000005
-ghci> raiz 16 10
-4.0
+Caso recursivo:
+f(n) = f(n-1) + f(n-2)
 
-2 Definición recursiva de la función raiz
-
-raiz :: Float -> Int -> Float
-raiz x 0 = 1 
-raiz x n = (x / (raiz x (n-1)) + (raiz x (n-1))) / 2.0
-
-3 Estadísticas de la función raiz
+3 Estadísticas de la función fibonacci
 
     El tiempo necesario para calcular (raiz 100 n) para n en [14..20] se recoge en la siguiente tabla
 
@@ -158,7 +148,7 @@ raiz x n = (x / (raiz x (n-1)) + (raiz x (n-1))) / 2.0
 
     En la tabla se observa que por cada número que aumenta n se duplica el tiempo y el espacio. Por tanto la relación entre n y el tiempo necesario para calcular (raiz 100 n) es del orden 2ⁿ
 
-4 Ecuaciones de coste de la función raiz
+4 Ecuaciones de coste de la función fibonacci
 
     Si T(n) es el tiempo necesario para calcular (raiz a x n), entonces
 
