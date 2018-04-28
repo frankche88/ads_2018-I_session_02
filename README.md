@@ -133,9 +133,11 @@ f(1) = 1
 Caso recursivo:
 f(n) = f(n-1) + f(n-2)
 
+
+
 3 Estadísticas de la función fibonacci
 
-    El tiempo necesario para calcular (raiz 100 n) para n en [14..20] se recoge en la siguiente tabla
+    El tiempo necesario para calcular (fibonacci para n igual 100 ) para n en [14..20] se recoge en la siguiente tabla
 
     n 	segs
     14 	0.14
@@ -146,20 +148,19 @@ f(n) = f(n-1) + f(n-2)
     19 	4.08
     20 	8.10
 
-    En la tabla se observa que por cada número que aumenta n se duplica el tiempo y el espacio. Por tanto la relación entre n y el tiempo necesario para calcular (raiz 100 n) es del orden 2ⁿ
+    En la tabla se observa que por cada número que aumenta n se duplica el tiempo y el espacio. Por tanto la relación entre n y el tiempo necesario para calcular (fibonacci  para n igual 100 ) es del orden 2ⁿ
 
 4 Ecuaciones de coste de la función fibonacci
 
-    Si T(n) es el tiempo necesario para calcular (raiz a x n), entonces
+    Si T(n) es el tiempo necesario para calcular (fibonacci de n), entonces
 
 T(0)   = 1
 T(n+1) = 2*T(n)
 
-    Nota: Las ecuaciones de coste se pueden resolver con Wolfram Alpha.
 
-5 Demostración de que raiz ∈ O(2ⁿ) (es decir, es de coste exponencial)
+5 Demostración de que fibonacci ∈ O(2ⁿ) (es decir, es de coste exponencial)
 
-    Basta demostrar que para la función raiz, T(n) = 2ⁿ.
+    Basta demostrar que para la función fibonacci, T(n) = 2ⁿ.
     Se demuestra por inducción.
     Caso base:
 
